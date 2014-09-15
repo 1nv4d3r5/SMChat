@@ -17,12 +17,15 @@
 <p>Let's do some chatting</p>
 <hr />
 
-<div id="chat_input">
+<div id="chat_view"></div>
+
+	<div id="chat_input">
+	
 	<input type="text" id="chat_message" name="chat_message" value="" />
 	
 	<?php echo anchor('#', 'Say it', array('title' => 'Send this chat message', 'id' => 'submit_message')); ?>
 	<div class="clearer"></div>
-
+	
 </div>
 
 </body>

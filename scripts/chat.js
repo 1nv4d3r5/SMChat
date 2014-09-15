@@ -1,5 +1,11 @@
 $(document).ready(function() {
 	
-	alert('I have made it!');
+	$('a#submit_message').click(function() {
+		
+		alert($('input#chat_message').val());
+		
+		return false;
+	
+	});
 
 });
