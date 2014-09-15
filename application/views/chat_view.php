@@ -7,6 +7,16 @@
 
 <script src="<?php echo base_url(); ?>scripts/jquery-2.1.1.min.js" type="text/javascript" ></script>
 <script src="<?php echo base_url(); ?>scripts/chat.js" type="text/javascript" ></script>
+
+<script>
+	
+	var chat_id = "<?php echo $chat_id; ?>";
+	var user_id = "<?php echo $user_id; ?>";
+	var url = "<?php echo base_url().'chat/ajax_add_chat_message'; ?>";
+
+</script>
+
+
 </head>
 <body>
 <h1>This is a Simple Chat Application</h1>
