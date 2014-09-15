@@ -1,0 +1,9 @@
+body {
+	background: rgba(0,0,0,0.08);
+
+}
+
+div#chat_input {
+	width: 400px;
+	min-height: 400px;
+}
