@@ -6,4 +6,6 @@ body {
 div#chat_input {
 	width: 400px;
 	min-height: 400px;
+	border: 1px solid black;
+	margin: 0 auto;
 }
