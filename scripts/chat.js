@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	
+
+	
+	
+	setInterval(function() { get_chat_messages(); } , 4000);
+	
 	$('input#chat_message').keypress(function(e) {
 		
 		if(e.which == 13)
@@ -49,6 +54,8 @@ $(document).ready(function() {
 		
 		get_chat_messages();
 		
+		PlaySound("sound1");	
+		
 	});
 
 	function get_chat_messages()
@@ -68,7 +75,6 @@ $(document).ready(function() {
 			
 				$('div#container').html(data);
 				
-				$('input#chat_message').val('');
 			},
 			
 			
@@ -82,6 +88,12 @@ $(document).ready(function() {
 		
 		});
 	
+	}
+	
+	function PlaySound(soundObj) 
+	{
+	  var sound = document.getElementById(soundObj);
+	  sound.Play();
 	}
 	
 	get_chat_messages();

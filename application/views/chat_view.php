@@ -20,6 +20,10 @@
 
 </head>
 <body>
+
+
+<embed src="success.wav" autostart="false" width="0" height="0" id="sound1" enablejavascript="true">
+
 <h1><!-- This is a Simple Chat Application --></h1>
 <?php
 	//echo heading('Chat Application', 3);

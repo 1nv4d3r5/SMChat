@@ -14,8 +14,12 @@ class Chat extends CI_Controller {
 	{
 		/*send in chat_id and user_id */
 		
+		$chat_id = 1;
+		
 		$data['chat_id'] = 1;
 		$data['user_id'] = 1234;
+		
+		$this->session->set_userdata('last_chat_message_id_'.$chat_id, '0' );
 		
 		$this->load->view('chat_view', $data);
 	
@@ -35,6 +39,17 @@ class Chat extends CI_Controller {
 		$chat_message_content = $this->input->post('chat_message_content');
 		
 		$this->_add_chat_messages($chat_id, $user_id, $chat_message_content);
+		
+		echo $this->ajax_get_chat_messages($chat_id);
+	
+	}
+	
+	
+	public function ajax_get_chat_messages()
+	{
+		$chat_id = $this->input->post('chat_id');
+		
+		echo $this->_get_chat_messages($chat_id);
 	
 	}
 	
@@ -42,26 +57,25 @@ class Chat extends CI_Controller {
 	{
 		$this->chat_model->add_chat_message($chat_id, $user_id, $chat_message_content);
 		
-		$this->_get_chat_messages($chat_id);
 		
-	}
-	
-	public function ajax_get_chat_messages()
-	{
-		$chat_id = $this->input->post('chat_id');
-		
-		$this->_get_chat_messages($chat_id);
-	
 	}
 	
 	function _get_chat_messages($chat_id)
 	{
+		$last_chat_message_id = (int)$this->session->userdata('last_chat_message_id_'.$chat_id);
 		
-		$chat_messages = $this->chat_model->get_chat_messages($chat_id);
+		$chat_messages = $this->chat_model->get_chat_messages($chat_id, $last_chat_message_id);
 		
 		if($chat_messages->num_rows() > 0)
 		{
+		
 			//we have some chat. let's return 
+			
+			//we store the last chat message id
+			
+			$last_chat_message_id = $chat_messages->row($chat_messages->num_rows() - 1)->chat_message_id;
+			
+			$this->session->set_userdata('last_chat_message_id_'.$chat_id, $last_chat_message_id);
 			
 			$chat_messages_html = '<ul>';
 			
@@ -85,9 +99,7 @@ class Chat extends CI_Controller {
 			
 			$chat_messages_html .= '</ul>';
 
-			echo $chat_messages_html;
-			
-			exit;
+			return $chat_messages_html;
 			
 		}
 		else
