@@ -16,6 +16,9 @@ $(document).ready(function() {
 			datatype: 'JSON',
 			success : function(data) {
 				
+				$('div#container').html(data);
+				
+				$('input#chat_message').val('');
 			
 			},
 			
@@ -38,7 +41,7 @@ $(document).ready(function() {
 
 	function get_chat_messages()
 	{
-		var url2 = base_url + 'chat/ajax_get_chat_message';
+		var url2 = base_url + 'chat/ajax_get_chat_messages';
 		
 		var form_data = {
 			chat_id: chat_id
@@ -51,9 +54,9 @@ $(document).ready(function() {
 			type : 'POST',
 			success : function(data) {
 			
-				$('div#chat_view').html(data);
+				$('div#container').html(data);
 				
-			
+				$('input#chat_message').val('');
 			},
 			
 			

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> A Chat Application</title>
+<title> <!--A Chat Application --></title>
 
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>style/style.css" />
 
@@ -12,7 +12,7 @@
 	
 	var chat_id = "<?php echo $chat_id; ?>";
 	var user_id = "<?php echo $user_id; ?>";
-	var url = "<?php echo base_url().'chat/ajax_add_chat_message'; ?>";
+	var url = "<?php echo base_url().'chat/ajax_add_chat_messages'; ?>";
 	var base_url = "<?php echo base_url(); ?>";
 
 </script>
@@ -20,23 +20,25 @@
 
 </head>
 <body>
-<h1>This is a Simple Chat Application</h1>
+<h1><!-- This is a Simple Chat Application --></h1>
 <?php
-	echo heading('Chat Application', 3);
+	//echo heading('Chat Application', 3);
 ?>
 
 <p>Let's do some chatting</p>
 <hr />
 
-<div id="chat_view"></div>
+<div class="chat_window">
+	<div id="container"></div>
 
-	<div id="chat_input">
-	
-	<input type="text" id="chat_message" name="chat_message" value="" />
-	
-	<?php echo anchor('#', 'Say it', array('title' => 'Send this chat message', 'id' => 'submit_message')); ?>
-	<div class="clearer"></div>
-	
+		<div id="chat_input">
+		
+		<input type="text" id="chat_message" name="chat_message" value="" />
+		
+		<?php echo anchor('#', 'Say it', array('title' => 'Send this chat message', 'id' => 'submit_message')); ?>
+		<div class="clearer"></div>
+		
+	</div>
 </div>
 
 </body>
