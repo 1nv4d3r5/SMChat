@@ -9,12 +9,11 @@ $(document).ready(function() {
 		
 		};
 		
-		if(chat_message_content == '')	{ return false; }
-		
 		$.ajax({
 			url : url,
 			data : form_data,
-			datatype: json,
+			type : 'POST',
+			datatype: 'JSON',
 			success : function(data) {
 				
 				alert(data);
@@ -35,4 +34,39 @@ $(document).ready(function() {
 	
 	});
 
+	function get_chat_messages()
+	{
+		var url = base_url + 'chat/ajax_get_chat_message';
+		
+		var form_data = {
+			chat_id: chat_id
+		};
+		
+		$.ajax({
+			url : url,
+			data : form_data,
+			type : 'POST',
+			datatype: 'JSON',
+			success : function(data) {
+				
+				if(data.status == 'ok')
+				{
+					$('div#chat_view').html(data.content);
+				
+				}
+				else{
+					//there was an error, do something
+				
+				}
+			
+			}
+		
+		
+		});
+	
+	}
+	
+	get_chat_messages();
+	
+	
 });

@@ -13,6 +13,7 @@
 	var chat_id = "<?php echo $chat_id; ?>";
 	var user_id = "<?php echo $user_id; ?>";
 	var url = "<?php echo base_url().'chat/ajax_add_chat_message'; ?>";
+	var base_url = "<?php echo base_url(); ?>";
 
 </script>
 
