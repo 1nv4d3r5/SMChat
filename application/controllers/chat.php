@@ -50,20 +50,20 @@ class Chat extends CI_Controller {
 			
 			$chat_messages_html = '<ul>';
 			
-			foreach($chat_messages as $chat_message)
+			foreach($chat_messages->result() as $chat_message)
 			{
-				$chat_messages_html .= '<li>'.$chat_message->chat_message_content.'</li>';
+				$chat_messages_html .= '<li><span class="chat_message_header>'.
+										$chat_message->chat_message_timestamp.' by '.
+										$chat_message->name.'</span><p>'.$chat_message->chat_message_content.'</p></li>';
 			
 			}
 			
 			$chat_messages_html .= '</ul>';
+
+			echo $chat_messages_html;
 			
-			$result = array('status' => 'ok',
-							'content' => $chat_messages_html
-							);
+			exit;
 			
-			echo json_encode($result);
-		
 		}
 		else
 		{

@@ -16,16 +16,18 @@ class Chat_model extends CI_Model {
 	
 	}
 	
-	public function get_chat_message($user_id)
+	public function get_chat_message($chat_id)
 	{
 		$query_str = "SELECT cm.user_id, cm.chat_message_content, 
 							DATE_FORMAT(cm.create_date, '%D of %M %Y at %H:%i:%s') AS chat_message_timestamp,
 							u.name
 							FROM chat_messages cm
 							JOIN users u ON cm.user_id = u.user_id
-							WHERE cm.user_id = ? ";
+							WHERE cm.chat_id = ? ";
 	
-		$result = $this->db->query($query_str, $user_id);
+		$result = $this->db->query($query_str, $chat_id);
+		
+		return $result;
 		
 	}
 
