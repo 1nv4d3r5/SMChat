@@ -26,3 +26,11 @@ ul li {
 	padding: 5px;
 
 }
+
+span {
+	color: rgba(0,0,0,0.4);
+}
+
+.by_current_user {
+	color: rgba(0,104,253,0.7);
+}

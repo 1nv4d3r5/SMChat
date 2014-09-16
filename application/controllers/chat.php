@@ -52,9 +52,11 @@ class Chat extends CI_Controller {
 			
 			foreach($chat_messages->result() as $chat_message)
 			{
-				$chat_messages_html .= '<li><span class="chat_message_header>'.
+				$li_class = ($chat_message->user_id == 1) ? 'class="by_current_user"' : '' ;
+				
+				$chat_messages_html .= '<li ><span '.$li_class.'>'.
 										$chat_message->chat_message_timestamp.' by '.
-										$chat_message->name.'</span><p>'.$chat_message->chat_message_content.'</p></li>';
+										$chat_message->name.'</span><br />'.$chat_message->chat_message_content.'</li>';
 			
 			}
 			

@@ -16,7 +16,6 @@ $(document).ready(function() {
 			datatype: 'JSON',
 			success : function(data) {
 				
-			get_chat_messages();
 			
 			},
 			
@@ -30,7 +29,10 @@ $(document).ready(function() {
 		
 		});
 		
+		
 		return false;
+		
+		get_chat_messages();
 		
 	});
 
