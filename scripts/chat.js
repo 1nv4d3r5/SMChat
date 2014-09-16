@@ -1,8 +1,7 @@
 $(document).ready(function() {
-	
 
-	
-	
+
+	$('#container').animate({ scrollTop: $(document).height() }, "fast");	
 	setInterval(function() { get_chat_messages(); } , 4000);
 	
 	$('input#chat_message').keypress(function(e) {
@@ -36,7 +35,8 @@ $(document).ready(function() {
 				$('div#container').html(data);
 				
 				$('input#chat_message').val('');
-			
+				
+				$("#container").animate({ scrollTop: $(document).height() }, "fast");			
 			},
 			
 			error : function(val1, val2, val3) {
@@ -72,8 +72,15 @@ $(document).ready(function() {
 			datatype : 'json',
 			type : 'POST',
 			success : function(data) {
-			
-				$('div#container').html(data);
+				
+				
+				if(data != '')
+				{
+
+					$('div#container').html(data);
+					
+					$('#container').animate({ scrollTop: $(document).height() }, 'fast');					
+				}
 				
 			},
 			
@@ -83,8 +90,6 @@ $(document).ready(function() {
 			
 			}
 			
-			
-		
 		
 		});
 	

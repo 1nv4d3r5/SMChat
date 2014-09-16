@@ -32,6 +32,13 @@ div#chat_input > input {
 	height:50px;
 }
 
+ .clearer {
+	clear: both;
+	height: 50px;
+	width: 100%;
+ }
+
+
 ul li {
 	list-style: none;
 	margin: 4px;
@@ -56,8 +63,8 @@ span {
   padding: 40px 20px;
   margin: 0 auto;
   max-width: 600px;
+  overflow-y: scroll;
 }
- 
  
 .datestamp {
   display: block;

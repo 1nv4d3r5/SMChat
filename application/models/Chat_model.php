@@ -23,8 +23,7 @@ class Chat_model extends CI_Model {
 							u.name
 							FROM chat_messages cm
 							JOIN users u ON cm.user_id = u.user_id
-							WHERE cm.chat_id = ?  
-							AND cm.chat_message_id = ?
+							WHERE cm.chat_id = ? 
 							ORDER BY chat_message_timestamp, u.name ASC";
 	
 		$result = $this->db->query($query_str, array($chat_id, $last_chat_message_id));

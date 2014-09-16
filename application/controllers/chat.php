@@ -81,14 +81,21 @@ class Chat extends CI_Controller {
 			
 			foreach($chat_messages->result() as $chat_message)
 			{
+				$li_class = '';
+				
 				if($chat_message->user_id == 1234)
 				{
-					$li_class = 'class="bubble"';
+					$li_class .= ' class="bubble" ';
+				
+				}
+				if($chat_message->chat_message_id == $last_chat_message_id)
+				{
+						$li_class .= ' id="last" ';
 				
 				}
 				else
 				{
-					$li_class = 'class="bubble bubble-alt yellow "';
+					$li_class .= ' class="bubble bubble-alt yellow " ';
 				
 				}
 				

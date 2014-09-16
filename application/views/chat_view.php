@@ -34,6 +34,7 @@
 
 <div class="chat_window">
 	<div id="container"></div>
+	
 
 		<div id="chat_input">
 		
@@ -41,6 +42,8 @@
 		
 		<?php echo anchor('#', 'Say it', array('title' => 'Send this chat message', 'id' => 'submit_message')); ?>
 		</div>
+		
+		<div class="clearer"></div>
 		
 	</div>
 </div>
