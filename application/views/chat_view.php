@@ -36,7 +36,7 @@
 		<input type="text" id="chat_message" name="chat_message" value="" />
 		
 		<?php echo anchor('#', 'Say it', array('title' => 'Send this chat message', 'id' => 'submit_message')); ?>
-		<div class="clearer"></div>
+		</div>
 		
 	</div>
 </div>

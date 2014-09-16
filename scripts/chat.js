@@ -1,5 +1,17 @@
 $(document).ready(function() {
 	
+	$('input#chat_message').keypress(function(e) {
+		
+		if(e.which == 13)
+		{
+			$('a#submit_message').click();
+			
+			return false;
+			
+		}
+	
+	});
+	
 	$('a#submit_message').click(function() {
 		
 		var form_data = {

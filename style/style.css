@@ -15,16 +15,21 @@ div#container {
 	min-height: 400px;
 	margin: 0 auto;
 	height: 100%;
-	padding: 40px 20px;
+	padding-bottom: 100px;
 }
 
 div#chat_input {
 	
 	width: 100%;
 	margin: 0 auto;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 
+}
+
+div#chat_input > input {
+	width: 300px;
+	height:50px;
 }
 
 ul li {
