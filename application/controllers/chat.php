@@ -12,7 +12,18 @@ class Chat extends CI_Controller {
 	
 	public function index()
 	{
-		/*send in chat_id and user_id */
+		if($this->session->userdata('isLoggedIn'))
+		{
+		
+			$this->load->view('chat_init');
+		
+		}
+		else
+		{
+		
+		
+		}
+		/*send in chat_id and user_id
 		
 		$chat_id = 1;
 		
@@ -22,6 +33,8 @@ class Chat extends CI_Controller {
 		$this->session->set_userdata('last_chat_message_id_'.$chat_id, '0' );
 		
 		$this->load->view('chat_view', $data);
+		
+		*/
 	
 	}
 	
@@ -90,7 +103,7 @@ class Chat extends CI_Controller {
 				}
 				if($chat_message->chat_message_id == $last_chat_message_id)
 				{
-						$li_class .= ' id="last" ';
+						//$li_class .= ' id="last" ';
 				
 				}
 				else

@@ -3,32 +3,88 @@ body {
 
 }
 
+.login_form {
+	width: 400px;
+	height: 300px;
+	margin: 100px auto;
+	border: 1px solid black;
+	background: rgba(0,0,0,0.1);
+	padding: 20px;
+	border-radius: 10px;
+
+}
+
+.login_form p {
+	font-size: 20px;
+}
+
+
+div.chat_init {
+	width: 250px;
+	height: 80px;
+	right: 0px;
+	bottom: 0px;
+	position: fixed;
+	background: rgba(0,104,253,0.3);
+
+}
 div.chat_window {
-	max-width: 600px;
+	width: 400px;
 	margin: 0 auto;
+	height: 400px;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 	
 }
 
 div#container {
 	position: relative;
 	width: 100%;
-	min-height: 400px;
 	margin: 0 auto;
-	height: 100%;
-	padding-bottom: 100px;
+	height: 338px;
+	margin-bottom: 0px;
+	overflow-y: scroll;
 }
 
 div#chat_input {
 	
-	width: 100%;
+	width: 80%;
 	margin: 0 auto;
 	position: fixed;
 	bottom: 0;
+	height: 80px;
 
 }
 
+
 div#chat_input > input {
-	width: 300px;
+
+	box-sizing: border-box;
+	float: left;
+	width: 380px;
+	position: relative;
+
+	background: #95c2fd;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.15, #bee2ff), color-stop(1, #95c2fd));
+	background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: -o-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	background-image: linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95c2fd', endColorstr='#bee2ff');
+
+	border: solid 1px rgba(0,0,0,0.5);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+
+	-webkit-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
+	color: #000;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+	word-wrap: break-word;
+
 	height:50px;
 }
 
@@ -36,6 +92,7 @@ div#chat_input > input {
 	clear: both;
 	height: 50px;
 	width: 100%;
+	display: none;
  }
 
 
@@ -59,12 +116,6 @@ span {
 }
 
 /** page structure **/
-.container {
-  padding: 40px 20px;
-  margin: 0 auto;
-  max-width: 600px;
-  overflow-y: scroll;
-}
  
 .datestamp {
   display: block;
@@ -97,13 +148,13 @@ span {
   border: solid 1px rgba(0,0,0,0.5);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
  
   -webkit-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
   -moz-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
   box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-  padding: 6px 20px;
+  margin-bottom: 3px;
+  padding: 1px 5px;
   color: #000;
   text-shadow: 0 1px 1px rgba(255,255,255,0.8);
   word-wrap: break-word;
@@ -142,7 +193,7 @@ span {
 }
  
 .bubble p {
-  font-size: 1.4em;
+  font-size: 1.0em;
 }
 
 /* yellow bubble */
