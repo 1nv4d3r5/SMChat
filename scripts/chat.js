@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
 
-	$('#container').animate({ scrollTop: $(document).height() }, "fast");	
+	$('#container').animate({ scrollTop: $(document).height() }, "fast");
+	
 	setInterval(function() { get_chat_messages(); } , 4000);
 	
 	$('input#chat_message').keypress(function(e) {
@@ -18,9 +19,10 @@ $(document).ready(function() {
 	
 	$('a#submit_message').click(function() {
 		
+		var url = base_url + 'chat/ajax_add_chat_messages';
 		var form_data = {
 			chat_id : chat_id,
-			user_id : user_id,
+			username : username,
 			chat_message_content : $('input#chat_message').val()
 		
 		};
@@ -29,7 +31,6 @@ $(document).ready(function() {
 			url : url,
 			data : form_data,
 			type : 'POST',
-			datatype: 'JSON',
 			success : function(data) {
 				
 				$('div#container').html(data);
@@ -60,16 +61,16 @@ $(document).ready(function() {
 
 	function get_chat_messages()
 	{
-		var url2 = base_url + 'chat/ajax_get_chat_messages';
+		var url = base_url + 'chat/ajax_get_chat_messages';
 		
 		var form_data = {
-			chat_id: chat_id
+			chat_id : chat_id,
+			username : username
 		};
 		
 		$.ajax({
-			url : url2,
+			url : url,
 			data : form_data,
-			datatype : 'json',
 			type : 'POST',
 			success : function(data) {
 				

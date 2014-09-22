@@ -11,9 +11,8 @@
 <script>
 	
 	var chat_id = "<?php echo $chat_id; ?>";
-	var user_id = "<?php echo $user_id; ?>";
-	var url = "<?php echo base_url().'chat/ajax_add_chat_messages'; ?>";
-	var base_url = "<?php echo base_url(); ?>";
+	var username = "<?php echo $username; ?>";
+	var base_url = "<?php echo $base_url; ?>";
 
 </script>
 
@@ -29,7 +28,7 @@
 	//echo heading('Chat Application', 3);
 ?>
 
-<p>Let's do some chatting</p>
+<p>Let's do some chatting<a href="<?php echo base_url().'login/logout'; ?>">Logout</a></p>
 <hr />
 
 <div class="chat_window">

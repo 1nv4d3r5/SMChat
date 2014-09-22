@@ -5,7 +5,6 @@
 <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>style/style.css" />
 
 <script src="<?php echo base_url(); ?>scripts/jquery-2.1.1.min.js" type="text/javascript" ></script>
-<script src="<?php echo base_url(); ?>scripts/chat.js" type="text/javascript" ></script>
 
 </head>
 <body>

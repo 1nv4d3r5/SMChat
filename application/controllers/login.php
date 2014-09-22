@@ -18,8 +18,17 @@ class login extends CI_Controller {
 	public function auth()
 	{
 		$this->session->set_userdata('isLoggedIn', 'yes');
+		$this->session->set_userdata('username', 'admin');
 		
 		redirect('chat', 'refresh');
+	
+	}
+	
+	public function logout()
+	{
+		$this->session->unset_userdata('isLoggedIn');
+		$this->session->unset_userdata('username');
+		
 	
 	}
 
